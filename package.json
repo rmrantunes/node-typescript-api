@@ -1,0 +1,33 @@
+{
+  "name": "typescript-api",
+  "version": "1.0.0",
+  "description": "Typescript Nodejs API",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc",
+    "start": "npm run build && node dist/src/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rmrantunes/node-typescript-api.git"
+  },
+  "keywords": [
+    "nodejs",
+    "typescript",
+    "api"
+  ],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rmrantunes/node-typescript-api/issues"
+  },
+  "homepage": "https://github.com/rmrantunes/node-typescript-api#readme",
+  "devDependencies": {
+    "@types/module-alias": "^2.0.0",
+    "@types/node": "^14.14.14",
+    "typescript": "^4.1.3"
+  },
+  "dependencies": {
+    "module-alias": "^2.2.2"
+  }
+}
