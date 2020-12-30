@@ -50,5 +50,5 @@ userSchema.pre<UserModel>("save", async function (): Promise<void> {
   }
 });
 
-interface UserModel extends Omit<User, "_id">, Document {}
+export interface UserModel extends Omit<User, "_id">, Document {}
 export const User: Model<UserModel> = mongoose.model("User", userSchema);
