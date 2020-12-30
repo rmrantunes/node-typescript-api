@@ -49,7 +49,7 @@ describe("users functional test", () => {
       });
     });
   });
-  describe.only("when authenticate a user", () => {
+  describe("when authenticate a user", () => {
     it("should generate a token for a valid user", async () => {
       const newUser = {
         name: "John Doe",
