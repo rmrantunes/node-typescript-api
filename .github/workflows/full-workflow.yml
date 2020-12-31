@@ -27,3 +27,16 @@ jobs:
         run: npm ci
       - name: Run all tests
         run: npm run test
+
+      - shell: bash
+        if: github.ref == 'refs/heads/master'
+        name: Create SSH deployment key
+        env:
+          SSH_KEY: ${{secrets.SSH_PRIVATE_KEY}}
+        run: ./scripts/deploy.sh
+
+      - name: Deployment
+        if: github.ref == 'refs/heads/master'
+        run: git remote add umbler ssh://git@geonosis.deploy.umbler.com:9922/j0wrdy6e/surf-forecast-api-com.git && git push master
+        env:
+          CI: true
