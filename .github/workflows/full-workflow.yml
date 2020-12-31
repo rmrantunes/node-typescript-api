@@ -37,6 +37,6 @@ jobs:
 
       - name: Deployment
         if: github.ref == 'refs/heads/master'
-        run: git remote add umbler ssh://git@geonosis.deploy.umbler.com:9922/j0wrdy6e/surf-forecast-api-com.git && git push umbler main
+        run: git remote add umbler ssh://git@geonosis.deploy.umbler.com:9922/j0wrdy6e/surf-forecast-api-com.git && git push umbler master
         env:
           CI: true
