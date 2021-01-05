@@ -29,7 +29,7 @@ describe("AuthMiddleware", () => {
       })),
     };
     const nextFake = jest.fn();
-    authMiddleware(reqFake, resFake as object, nextFake);
+    authMiddleware(reqFake, resFake as Record<string, unknown>, nextFake);
     expect(resFake.status).toHaveBeenCalledWith(401);
     expect(sendMock).toHaveBeenCalledWith({
       code: 401,
@@ -48,7 +48,7 @@ describe("AuthMiddleware", () => {
       })),
     };
     const nextFake = jest.fn();
-    authMiddleware(reqFake, resFake as object, nextFake);
+    authMiddleware(reqFake, resFake as Record<string, unknown>, nextFake);
     expect(resFake.status).toHaveBeenCalledWith(401);
     expect(sendMock).toHaveBeenCalledWith({
       code: 401,
