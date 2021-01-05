@@ -41,12 +41,14 @@ describe("Beach forecast functional tests", () => {
         lng: "151.289824",
         params: /(.*)/,
         source: "noaa",
+        end: /(.*)/,
       })
       .reply(200, stormGlassWeather3HoursFixture);
 
     const { body, status } = await global.testRequest
       .get("/forecast")
       .set({ "x-access-token": token });
+    console.log(body);
     expect(status).toBe(200);
     expect(body).toEqual(apiForecastResponse1BeachFixture);
   });
